@@ -1,0 +1,119 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@import "theme/variables.scss";
+@import "theme/color_variables.scss";
+
+.clear{ clear: both;}
+html.md{
+    font-family: 'Nunito', sans-serif !important;
+}
+html.ios{
+    font-family: 'Nunito', sans-serif !important;
+}
+body{
+    font-family: 'Nunito', sans-serif !important; 
+}
+
+.scroll-y, .inner-scroll { display: none; }
+  *::-webkit-scrollbar {
+    display: none;
+}
+ion-content{
+    --background: #f2f2f3 !important;
+}
+.back{ position: absolute; top: 30px; left: 15px; z-index: 1; width: 32px; height: 32px;}
+
+.fetching-block{ width: 100%; padding: 30px; text-align: center;}
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px; vertical-align: middle;
+  }
+  .lds-ring span {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #001f46;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #001f46 transparent transparent transparent;
+  }
+  .lds-ring span:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring span:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring span:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .inner-heading-style{
+      width: 100%; height: auto; margin: 0; padding: 0; float: left; height: 95px; position: relative; text-align: center; font-size: 18px; font-weight: 700; text-transform: capitalize; border-radius: 10px 10px 0 0;
+      &.yellow{
+        background-color: $custom_secondary;
+        color: $custom_primary;
+        .heading{
+          .icon-back{
+            background-color: $custom_primary;
+          }
+        }
+      }
+      &.blue{
+        background-color: $custom_primary;
+        color: #fff;
+        .heading{
+          .icon-back{
+            background-color: $custom_secondary;
+          }
+        }
+      }
+      .heading{
+        width: 100%; position: absolute; top: -31px; left: 0;
+        .icon-back{
+          width: 62px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 100%; margin: 0 auto 15px;
+        }
+      }
+  }
+
+
+  

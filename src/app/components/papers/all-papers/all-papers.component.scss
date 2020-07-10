@@ -1,0 +1,34 @@
+.avatoo-section{
+    width: 100%; float: left;  margin-top: 20px; padding: 0 0 0 0;
+    
+    .papers-details{
+        text-align: center; width: 100%; float: left; position: relative;
+        ion-card{
+            height: 149px; box-shadow: rgba(23,49,67,.15) 2px 0 4px; border-radius: 5px; position: relative; padding: 0; margin: 0 0 11px 0;
+            .image-box{
+                width: 100%; height: 100px; position: relative;
+                img{position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;}
+            }
+        }
+        .card-title{
+            position: absolute; bottom: -17px; left: 0; background-color: #f0f0f0; font-size: 14px; color: #212121; width: 100%;  font-weight: 700; height: 70px; display: flex; align-items: center; justify-content: center;
+        }
+    }
+}
+
+ @media only screen and (max-width:500px){
+    .avatoo-section{
+        .papers-details{
+            ion-card{
+                .image-box{
+                    img{
+                        width: 36px;
+                    }
+                }
+            }
+            .card-title{ font-size: 11px;}
+        }
+    }
+ }
+
+
