@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { McqPagePageRoutingModule } from './mcq-page-routing.module';
 
 import { McqPagePage } from './mcq-page.page';
-import { McqComponent } from 'src/app/components/mcq/mcq.component';
-import { McqItemComponent } from 'src/app/components/mcq/mcq-item/mcq-item.component';
+import { McqComponent } from '../../components/mcq/mcq.component';
+import { McqItemComponent } from '../../components/mcq/mcq-item/mcq-item.component';
 
 @NgModule({
   imports: [

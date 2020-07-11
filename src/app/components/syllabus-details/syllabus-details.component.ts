@@ -12,6 +12,7 @@ import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 
 export class SyllabusDetailsComponent implements OnInit {
   fetching = true;
+  pdfblock = false;
   title: string = "Syllabus";
   sylllabus: any = []; 
   iframe_src:any;
@@ -30,7 +31,7 @@ export class SyllabusDetailsComponent implements OnInit {
       this.iframe_src2 = (this.iframe_src.changingThisBreaksApplicationSecurity);
       this.link = ('https://avatto.in/wp-content/uploads/2020/06/UGC-NET-Paper-1-updated-Syllabus.pdf');
       this.fetching = false;
-      
+      this.pdfblock=true;
     });
   }
 

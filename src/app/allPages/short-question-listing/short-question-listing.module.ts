@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ShortQuestionListingPageRoutingModule } from './short-question-listing-routing.module';
 
 import { ShortQuestionListingPage } from './short-question-listing.page';
-import { ShortQuestionListingComponent } from 'src/app/components/shortquestions/listing/short-question-listing/short-question-listing.component';
+import { ShortQuestionListingComponent } from '../../components/shortquestions/listing/short-question-listing/short-question-listing.component';
 
 @NgModule({
   imports: [

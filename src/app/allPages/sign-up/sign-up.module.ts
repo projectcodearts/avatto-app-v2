@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SignUpPageRoutingModule } from './sign-up-routing.module';
 
 import { SignUpPage } from './sign-up.page';
-import { RegisterComponent } from 'src/app/components/register/register.component';
+import { RegisterComponent } from '../../components/register/register.component';
 
 @NgModule({
   imports: [

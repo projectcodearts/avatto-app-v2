@@ -10,15 +10,26 @@
   </div>
   <ion-grid class="syallabus-details">
     <ion-row>
-      <ion-col size-lg="3" size-md="3" size-sm="6" size="6" *ngFor="let data of sylllabus">
-        <ion-card [routerLink]="['/data.link']">
+      <ion-col size-lg="12" size-md="12" size-sm="12" size="12" *ngFor="let data of sylllabus">
+        <!--<ion-card [routerLink]="['/data.link']">
           <div class="image-box">
             <img src="{{data.icon}}">
           </div>
           <ion-card-header>
             <ion-card-title class="card-title">{{data.name}}</ion-card-title>
           </ion-card-header>
-        </ion-card>
+        </ion-card>-->
+        <div class="new-category-section">
+          <div class="section" [routerLink]="['/', 'syllabus-details', data.link]"    expand="block">
+            <div class="new-sec">
+              <div class="image-back">
+                <img src="{{data.icon}}">
+              </div>
+              <div class="card-title">{{data.name}}</div>
+              <ion-icon></ion-icon>
+            </div>
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

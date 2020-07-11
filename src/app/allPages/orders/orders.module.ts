@@ -8,6 +8,7 @@ import { OrdersPageRoutingModule } from './orders-routing.module';
 
 import { OrdersPage } from './orders.page';
 import { OrdersComponent } from '../../components/orders/orders.component';
+import { ViewQuizComponent } from 'src/app/components/quiz/view-quiz/view-quiz.component';
 @NgModule({
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@
   </div>
   <p>Fetching...</p> 
 </div>
-<ion-card [routerLink]="['/', 'practice-question', data.link]"  routerDirection="forward"  expand="block" *ngFor="let data of pqdata">
+<ion-card [routerLink]="['/', 'practice-question', data.link]"  *ngFor="let data of pqdata">
   <div>
     <img src="{{data.icon}}">
     <ion-card-header>

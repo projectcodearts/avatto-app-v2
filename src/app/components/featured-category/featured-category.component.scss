@@ -26,6 +26,9 @@
         font-size: 13px; color: #9d9d9d; 
     }
 }
+ion-button{
+    background-color: $custom_primary; color: #fff; width: 100%; height: 50px; margin: 5.5px 0; border: none; float: left;
+}
 
 @media only screen and (max-width:500px){
     .cat-details{

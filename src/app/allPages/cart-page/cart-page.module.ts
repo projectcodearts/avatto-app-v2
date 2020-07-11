@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CartPagePageRoutingModule } from './cart-page-routing.module';
 
 import { CartPagePage } from './cart-page.page';
-import { CartComponent } from 'src/app/components/cart/cart.component';
+import { CartComponent } from '../../components/cart/cart.component';
 
 @NgModule({
   imports: [

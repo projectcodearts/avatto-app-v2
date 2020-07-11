@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageDetailsPageRoutingModule } from './product-page-details-routing.module';
 
 import { ProductPageDetailsPage } from './product-page-details.page';
-import { ProductDetailsComponent } from 'src/app/components/products/product-details/product-details.component';
-import { ProductsService } from 'src/app/allServices/products.service';
+
+import { ProductsService } from '../../../allServices/products.service';
+import { ProductDetailsComponent } from '../../../components/products/product-details/product-details.component';
 
 @NgModule({
   imports: [

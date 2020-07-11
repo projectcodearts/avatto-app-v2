@@ -30,12 +30,12 @@ export class MenuServices {
         menuicon: "duplicate"
       },
       {
-        menuname: "about us",
-        menulink: "/about-us",
-        menuicon: "people"
+        menuname: "Eligiblity",
+        menulink: "/eligiblity",
+        menuicon: "flask"
       },
       {
-        menuname: "Eligiblity",
+        menuname: "Syllabus",
         menulink: "/syllabus",
         menuicon: "laptop"
       },
@@ -43,12 +43,8 @@ export class MenuServices {
         menuname: "Papers",
         menulink: "/papers",
         menuicon: "book"
-      },
-      {
-        menuname: "Mocktest",
-        menulink: "/mocktest",
-        menuicon: "flask"
       }
+      
       
     ]
   }

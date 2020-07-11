@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SyllabusPagePageRoutingModule } from './syllabus-page-routing.module';
 
 import { SyllabusPagePage } from './syllabus-page.page';
-import { AllsyllabusComponent } from 'src/app/components/syllabus/allsyllabus/allsyllabus.component';
+import { AllsyllabusComponent } from '../../components/syllabus/allsyllabus/allsyllabus.component';
 
 @NgModule({
   imports: [

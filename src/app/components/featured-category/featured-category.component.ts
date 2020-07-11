@@ -8,6 +8,7 @@ import { finalize } from 'rxjs/operators';*/
   styleUrls: ['./featured-category.component.scss'],
 })
 export class FeaturedCategoryComponent implements OnInit {
+  lodemorebutton: boolean = false;
   fetching = false;
   fcategory: any = [];
   count:number = 1; 
@@ -22,6 +23,7 @@ export class FeaturedCategoryComponent implements OnInit {
       const data = JSON.stringify(response)
       this.fcategory = JSON.parse(data);
       this.fetching = false;
+      this.lodemorebutton = true;
       
     });
   }

@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPagePageRoutingModule } from './product-page-routing.module';
 
 import { ProductPagePage } from './product-page.page';
-import { ProductsComponent } from 'src/app/components/products/products.component';
-import { ProductItemComponent } from 'src/app/components/products/product-item/product-item.component';
-import { TextshortPipe } from 'src/app/allPipes/textshort.pipe';
+import { ProductsComponent } from '../../components/products/products.component';
+import { ProductItemComponent } from '../../components/products/product-item/product-item.component';
+import { TextshortPipe } from '../../allPipes/textshort.pipe';
 
 @NgModule({
   imports: [

@@ -36,7 +36,6 @@ export class McqService {
             option_no: "d",
             iconoption: "wrong"
           }
-           
         ],
         answareoption:[
           {

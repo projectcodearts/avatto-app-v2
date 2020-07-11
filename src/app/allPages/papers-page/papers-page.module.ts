@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PapersPagePageRoutingModule } from './papers-page-routing.module';
 
 import { PapersPagePage } from './papers-page.page';
-import { AllPapersComponent } from 'src/app/components/papers/all-papers/all-papers.component';
+import { AllPapersComponent } from '../../components/papers/all-papers/all-papers.component';
 
 @NgModule({
   imports: [

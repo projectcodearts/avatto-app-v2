@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         if(this.routeParamsID != ''){
           this.router.navigate([this.routeParams, this.routeParamsID]);
         } else {
-          this.router.navigate([this.routeParams]);
+          this.router.navigate(['/home']);
         }
         
       },

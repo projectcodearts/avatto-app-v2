@@ -7,9 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { CheckoutPagePageRoutingModule } from './checkout-page-routing.module';
 
 import { CheckoutPagePage } from './checkout-page.page';
-import { CheckoutComponent } from 'src/app/components/checkout/checkout.component';
-// import { CouponComponent } from 'src/app/components/coupon/coupon.component';
+import { CheckoutComponent } from '../../components/checkout/checkout.component';
 
+ 
 @NgModule({
   imports: [
     CommonModule,

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PracticeQuizPageRoutingModule } from './practice-quiz-routing.module';
 
 import { PracticeQuizPage } from './practice-quiz.page';
-import { PracticeQuizListingComponent } from 'src/app/components/practice-quiz-listing/practice-quiz-listing.component';
+import { PracticeQuizListingComponent } from '../../components/practice-quiz-listing/practice-quiz-listing.component';
 
 @NgModule({
   imports: [

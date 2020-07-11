@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PagenotfoundPageRoutingModule } from './pagenotfound-routing.module';
 
 import { PagenotfoundPage } from './pagenotfound.page';
-import { NotfoundComponent } from 'src/app/components/notfound/notfound.component';
+import { NotfoundComponent } from '../../components/notfound/notfound.component';
 
 @NgModule({
   imports: [

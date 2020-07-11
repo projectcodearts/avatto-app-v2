@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { QuizPagePageRoutingModule } from './quiz-page-routing.module';
 
 import { QuizPagePage } from './quiz-page.page';
-import { AllQuizComponent } from 'src/app/components/quiz/all-quiz/all-quiz.component';
+import { AllQuizComponent } from '../../components/quiz/all-quiz/all-quiz.component';
 
 @NgModule({
   imports: [

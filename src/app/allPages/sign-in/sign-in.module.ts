@@ -8,8 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { SignInPageRoutingModule } from './sign-in-routing.module';
 
 import { SignInPage } from './sign-in.page';
-import { LoginComponent } from 'src/app/components/login/login.component';
-import { CommonService } from 'src/app/allServices/common.service';
+import { LoginComponent } from '../../components/login/login.component';
+import { CommonService } from '../../allServices/common.service';
 
 @NgModule({
   imports: [

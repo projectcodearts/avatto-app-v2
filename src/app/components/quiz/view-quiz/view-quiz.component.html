@@ -1,10 +1,24 @@
+
 <ion-grid >
-  <ion-row *ngIf="startQz == ''">
-    <ion-col size="3"></ion-col>
+  <div class="fetching-block" *ngIf="fetching">
+    <div>
+      <div class="lds-ring">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>Fetching...</p>
+    </div>
+     
+  </div>
+  <ion-row *ngIf="startQz == ''" class="pop-up" [class.active]="active">
     <ion-col size="6">
-      <ion-button color="primary" (click)="startQuiz()" expand="full" size="large" >Start</ion-button>
+      <ion-button color="button_transparent" (click)="startQuiz()" expand="full">
+        <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        Start Quiz
+      </ion-button>
     </ion-col>
-    <ion-col size="3"> </ion-col>
   </ion-row>
   <ion-row >
     <ion-col size="4" *ngIf="startQz != ''">Cowndown : </ion-col>

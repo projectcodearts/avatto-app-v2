@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input  } from '@angular/core';
 import { ProductsService } from '../../allServices/products.service';
+import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.page.html',
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage implements OnInit {
-  constructor(public _products: ProductsService,private storage: Storage) { }
+  constructor(public _products: ProductsService,private storage: Storage, public modalController: ModalController, private router: Router) { }
   orderList : [];
   ngOnInit() {
     
@@ -17,5 +19,13 @@ export class OrdersPage implements OnInit {
     });
     
   }
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
+  
 
 }

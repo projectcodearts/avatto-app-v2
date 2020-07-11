@@ -12,6 +12,8 @@ export class ViewQuizComponent implements OnInit {
   @ViewChild('coundown') coundown: ElementRef;
   @ViewChild('submitQuizId') submitQuizId: ElementRef;
   @ViewChild('myDivElementRef') myDivElementRef: ElementRef;
+  fetching = false;
+  active:boolean = false;
   interval: any;
   timeout: any;
   startQz : any = '';
@@ -43,7 +45,14 @@ export class ViewQuizComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetching=true;
+    setTimeout(() => {
+      this.active=true;
+      this.fetching=false;
+    }, 1500);
+    
+  }
   async startQuiz(){
     let id = this.route.snapshot.paramMap.get('id');
     if(this.questionList.length <= 0){
@@ -246,5 +255,7 @@ export class ViewQuizComponent implements OnInit {
       
     }, 1000);
   }
+
+  
 
 }

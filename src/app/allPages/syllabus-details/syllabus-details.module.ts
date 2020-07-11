@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { SyllabusDetailsPageRoutingModule } from './syllabus-details-routing.module';
 
 import { SyllabusDetailsPage } from './syllabus-details.page';
-import { SyllabusDetailsComponent } from 'src/app/components/syllabus-details/syllabus-details.component';
-import { SafePipe } from 'src/app/allPipes/safe.pipe';
+import { SyllabusDetailsComponent } from '../../components/syllabus-details/syllabus-details.component';
+import { SafePipe } from '../../allPipes/safe.pipe';
 
 
 @NgModule({

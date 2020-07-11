@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MocktestPagePageRoutingModule } from './mocktest-page-routing.module';
 
 import { MocktestPagePage } from './mocktest-page.page';
-import { AllMocktestComponent } from 'src/app/components/mocktest/all-mocktest/all-mocktest.component';
+import { AllMocktestComponent } from '../../components/mocktest/all-mocktest/all-mocktest.component';
 
 @NgModule({
   imports: [

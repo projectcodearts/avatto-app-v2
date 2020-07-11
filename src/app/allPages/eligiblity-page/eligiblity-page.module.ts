@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { EligiblityPagePageRoutingModule } from './eligiblity-page-routing.module';
 
 import { EligiblityPagePage } from './eligiblity-page.page';
-import { AllEligiblityComponent } from 'src/app/components/eligiblity/all-eligiblity/all-eligiblity.component';
+import { AllEligiblityComponent } from '../../components/eligiblity/all-eligiblity/all-eligiblity.component';
 
 @NgModule({
   imports: [

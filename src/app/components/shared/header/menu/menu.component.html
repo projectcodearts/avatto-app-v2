@@ -3,7 +3,7 @@
   
   <div class="menu-wrapper">
     <ion-menu-toggle  *ngFor="let item of menu">
-      <ion-item lines="none" color="custom" [routerLink]="[item.menulink]" routerDirection="forward" expand="block" routerLinkActive="router-link-active" >
+      <ion-item lines="none" color="custom" [routerLink]="[item.menulink]" routerLinkActive="router-link-active" >
         <ion-icon slot="start" [name]="item.menuicon + '-outline'"></ion-icon>
         <ion-label color="primary">{{item.menuname | titlecase}}</ion-label>
       </ion-item>

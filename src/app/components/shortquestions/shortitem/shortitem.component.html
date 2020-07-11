@@ -30,7 +30,7 @@
   </div>
   <p>Fetching...</p> 
 </div>
-<ion-card [routerLink]="['/', 'short-question-listing', pageid]">
+<ion-card [routerLink]="['/', 'short-question-listing', pageid]" *ngIf="count>0">
   <div>
     <img src="assets/images/s-question.png">
     <ion-card-header>
