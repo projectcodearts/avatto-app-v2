@@ -1,8 +1,9 @@
 import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
-import { Platform, LoadingController, ToastController } from '@ionic/angular';
+import { Platform, LoadingController, AlertController,ToastController,ModalController } from '@ionic/angular';
 import { QuizService } from '../../../allServices/quiz.service'
 import { Router,ActivatedRoute } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { QuizInstructionPage } from '../../../allPages/quiz-instruction/quiz-instruction.page';
 @Component({
   selector: 'app-view-quiz',
   templateUrl: './view-quiz.component.html',
@@ -32,6 +33,8 @@ export class ViewQuizComponent implements OnInit {
     public quiz: QuizService,
     private el: ElementRef,
     private router: Router,
+    public modalController: ModalController,
+    public alertController: AlertController,
     private route: ActivatedRoute,
     private renderer: Renderer2,
     private storage: Storage
@@ -53,6 +56,21 @@ export class ViewQuizComponent implements OnInit {
     }, 1500);
     
   }
+
+  ionViewDidLeave(){
+    console.log("leave page");
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: QuizInstructionPage,
+      cssClass: 'my-custom-class',
+      swipeToClose: true,
+      presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
+    });
+    return await modal.present();
+  }
+
   async startQuiz(){
     let id = this.route.snapshot.paramMap.get('id');
     if(this.questionList.length <= 0){
@@ -206,6 +224,31 @@ export class ViewQuizComponent implements OnInit {
         '#7c58b8'
       );
     }
+  }
+
+  async confirmSubmitQuiz(){
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Are you Sure you want to finish!',
+      message: 'Your marks will be calculated base on your parformance in the test.',
+      buttons: [
+        {
+          text: 'Resume',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Finish',
+          handler: () => {
+            this.submitQuiz();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   async submitQuiz(){

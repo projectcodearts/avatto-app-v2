@@ -47,6 +47,7 @@ export class ViewResultComponent implements OnInit {
     this.shortResult['incorrectChoiceCount'] = incorrectChoiceCount;
     this.shortResult['unattended'] = unattended;
     this.shortResult['timeTaken'] = this.timeConversion();
+    localStorage.clear();
   }
   
   timeConversion(){

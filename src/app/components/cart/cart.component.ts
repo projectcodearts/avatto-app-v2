@@ -21,6 +21,10 @@ export class CartComponent implements OnInit {
     });
   }
 
+  ionViewWillLeave(){
+    console.log("leave page");
+  }
+
   removeCart(){
     delete this.cartProduct;
     localStorage.setItem("product",'');

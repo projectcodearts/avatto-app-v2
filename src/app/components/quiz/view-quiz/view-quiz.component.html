@@ -14,7 +14,7 @@
   </div>
   <ion-row *ngIf="startQz == ''" class="pop-up" [class.active]="active">
     <ion-col size="6">
-      <ion-button color="button_transparent" (click)="startQuiz()" expand="full">
+      <ion-button color="button_transparent" (click)="presentModal()" expand="full">
         <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
         Start Quiz
       </ion-button>
@@ -59,7 +59,7 @@
       <ion-button color="medium" *ngIf="nextBtnActive != 'true'" size="small"> Save And Next</ion-button>
     </ion-col>
     <ion-col size="3">
-      <ion-button color="secondary" size="small" (click)="submitQuiz()" #submitQuizId>Submit</ion-button>
+      <ion-button color="secondary" size="small" (click)="confirmSubmitQuiz()" #submitQuizId>Submit</ion-button>
     </ion-col>   
   </ion-row> 
 </ion-grid>
