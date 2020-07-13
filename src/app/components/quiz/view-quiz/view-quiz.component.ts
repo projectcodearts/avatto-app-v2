@@ -57,10 +57,6 @@ export class ViewQuizComponent implements OnInit {
     
   }
 
-  ionViewDidLeave(){
-    console.log("leave page");
-  }
-
   async presentModal() {
     const modal = await this.modalController.create({
       component: QuizInstructionPage,
@@ -68,6 +64,11 @@ export class ViewQuizComponent implements OnInit {
       swipeToClose: true,
       presentingElement: await this.modalController.getTop() // Get the top-most ion-modal
     });
+
+    modal.onDidDismiss().then((data) => {
+      this.startQuiz();
+    });
+
     return await modal.present();
   }
 
@@ -83,7 +84,10 @@ export class ViewQuizComponent implements OnInit {
         loading.dismiss();
         let item = data[0];
         this.timer = item['time_of_quiz'];
-        localStorage.setItem("totalTime",item['time_of_quiz']);
+
+        //localStorage.setItem("totalTime",item['time_of_quiz']);
+        this.storage.set('totalTime',item['time_of_quiz']);
+
         localStorage.setItem("question",JSON.stringify(item.question));
         this.questionList = JSON.parse(localStorage.getItem("question"));
         this.startQz = "quiz started";
@@ -91,7 +95,11 @@ export class ViewQuizComponent implements OnInit {
       });
     }  else {
       var i = 0;
-      this.timer = localStorage.getItem('timer')
+      //localStorage.getItem('timer');
+      this.storage.get('timer').then((val) => {
+        this.timer = val;
+      });
+
       this.startQz = "quiz started";
       this.startTimer(this.timer);
       this.timeout = setTimeout(() => {
@@ -289,7 +297,8 @@ export class ViewQuizComponent implements OnInit {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         coundownHtml.nativeElement.innerHTML = Math.floor(minutes) + ":" + seconds;
-        localStorage.setItem('timer',timer);
+        //localStorage.setItem('timer',timer);
+        this.storage.set('timer', timer);
         if (--timer < 0) {
             timer = duration;
             this.submitQuiz();

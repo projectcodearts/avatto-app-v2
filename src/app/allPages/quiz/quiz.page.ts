@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-quiz',
@@ -9,11 +9,16 @@ import { Component, OnInit} from '@angular/core';
 export class QuizPage implements OnInit {
   
   title:string = "Quiz";
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   ngOnInit() {
 
   }
   
+  ionViewDidLeave(){
+    console.log('page leave')
+    localStorage.removeItem("timer");
+    this.storage.remove('timer');
+  }
   
 }

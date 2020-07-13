@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NavController  } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-view-result',
   templateUrl: './view-result.component.html',
@@ -12,7 +13,8 @@ export class ViewResultComponent implements OnInit {
 
   resultSheet : any = [];
   shortResult : any = [];
-  constructor(public modalController: ModalController,public nav: NavController) { }
+  ViewDetail : any = "";
+  constructor(private storage: Storage,public modalController: ModalController,public nav: NavController) { }
 
   ngOnInit() {
     let correctChoiceCount : number = 0,incorrectChoiceCount : number = 0,unattended : number = 0 ,timeTaken,score;
@@ -51,18 +53,25 @@ export class ViewResultComponent implements OnInit {
   }
   
   timeConversion(){
-    let totSec = parseInt(localStorage.getItem("totalTime")) - parseInt(localStorage.getItem('timer'));
+    let timer,totalTime;
+    this.storage.get('timer').then((val) => {
+      timer = val;
+    });
+
+    this.storage.get('totalTime').then((val) => {
+      totalTime = val;
+    });
+    let totSec = parseInt(totalTime) - parseInt(timer);
     return totSec;
   }
 
   async checkExplain(explain){
     this.nav.navigateForward(['/explain',{"explain":explain}]);
-    /*
-    const modal = await this.modalController.create({
-      component: "explain",
-      cssClass: 'my-custom-class'
-    });
-    return await modal.present();*/
+  }
+
+  
+  vewDetails(){
+    this.ViewDetail = "true";
   }
 
 }
