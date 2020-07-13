@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../allServices/products.service';
-import { Platform, LoadingController, ToastController } from '@ionic/angular';
+import { Platform, LoadingController, ToastController, ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-user-address',
@@ -8,6 +8,7 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['./user-address.page.scss'],
 })
 export class UserAddressPage implements OnInit {
+  title:string = "Address";
    customerInfo :any = [];
    userAddress = {
     billing: {
@@ -27,7 +28,8 @@ export class UserAddressPage implements OnInit {
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public _products: ProductsService,
-    private storage: Storage
+    private storage: Storage,
+    public modalController: ModalController,
   ) { }
 
   ngOnInit() {
@@ -35,6 +37,13 @@ export class UserAddressPage implements OnInit {
       let item = data[0];
       this.customerInfo = item;
       console.log(this.customerInfo);
+    });
+  }
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      'dismissed': true
     });
   }
 

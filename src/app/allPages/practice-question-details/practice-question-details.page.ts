@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeQuestionDetailsPage implements OnInit {
 
+  title:string = "Practice Question";
   constructor() { }
 
   ngOnInit() {

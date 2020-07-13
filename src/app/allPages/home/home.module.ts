@@ -19,20 +19,20 @@ import { PapersService } from '../../allServices/papers.service';
 import { MocktestService } from '../../allServices/mocktest.service';
 import { EligiblityService } from '../../allServices/eligiblity.service';
 import { FeaturedCategoryComponent } from '../../components/featured-category/featured-category.component';
-import { CouponComponent } from '../../components/coupon/coupon.component';
+import { SharedModuleModule } from 'src/app/sharedModule/shared-module/shared-module.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModuleModule,
     HomePageRoutingModule
   ],
   declarations: [
     HomePage, 
     SearchbarComponent, 
     FeaturedCategoryComponent,
-    CouponComponent,
     SyllabusComponent,
     EligiblityComponent,
     PapersComponent,

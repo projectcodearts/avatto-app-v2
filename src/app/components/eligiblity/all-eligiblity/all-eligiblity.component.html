@@ -1,12 +1,14 @@
 <div class="avatoo-section">
   <div class="fetching-block" *ngIf="fetching" >
-    <div class="lds-ring">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div>
+      <div class="lds-ring">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <p>Fetching...</p>
     </div>
-    <p>Fetching</p>
   </div>
   <div class="eligiblity-details">
     <ion-card [routerLink]="['/data.link']" *ngFor="let data of eligiblity">

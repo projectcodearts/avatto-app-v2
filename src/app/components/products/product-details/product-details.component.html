@@ -20,13 +20,15 @@
   </ion-row>
 </ion-grid>-->
 <div class="fetching-block" *ngIf="fetching" >
-  <div class="lds-ring">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+  <div>
+    <div class="lds-ring">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <p>Fetching...</p>
   </div>
-  <p>Fetching</p>
 </div>
 <div class="product-details-back">
   <!-- <ion-slides pager="true" [options]="slideOpts" class="gallery">

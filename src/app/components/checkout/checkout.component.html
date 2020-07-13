@@ -1,9 +1,9 @@
-<ion-item>
-  <ion-label position="floating"> Coupon Code </ion-label>
-  <ion-input type="text" name="couponCode" [(ngModel)]="todo.couponCode" ></ion-input>
-</ion-item>
-<ion-button type="submit" expand="full" block color="primary" (click)="appyCouponCode()"> Apply Coupon Code</ion-button>
 <div class="check-out-back">
+  <ion-item>
+    <ion-label position="floating"> Coupon Code </ion-label>
+    <ion-input type="text" name="couponCode" [(ngModel)]="todo.couponCode" ></ion-input>
+  </ion-item>
+  <ion-button type="submit" expand="full" block color="button_transparent" (click)="appyCouponCode()"> Apply Coupon Code</ion-button>
   <form action="">
     <div class="clear"></div>
     <ion-grid>
