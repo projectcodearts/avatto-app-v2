@@ -1,6 +1,5 @@
 <div class="side-menu"> 
   <div class="logo"><a routerLink="/home"><img src="{{mainlogo}}" alt=""></a></div>
-  
   <div class="menu-wrapper">
     <ion-menu-toggle  *ngFor="let item of menu">
       <ion-item lines="none" color="custom" [routerLink]="[item.menulink]" routerLinkActive="router-link-active" >
@@ -15,7 +14,4 @@
       </ion-item>
     </ion-menu-toggle>
   </div>
-  
-  
-  
 </div>

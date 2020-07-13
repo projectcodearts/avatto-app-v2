@@ -16,6 +16,7 @@ export class McqPagePage implements OnInit {
     buttonValue = 0;
   maximumPages = 3;
   data:any;
+  title:string = "MCQ";
   constructor(public navCtrl: NavController,private httpClient: HttpClient,private route: ActivatedRoute,private el: ElementRef, private renderer: Renderer2) { 
     this.loadUsers();
   }

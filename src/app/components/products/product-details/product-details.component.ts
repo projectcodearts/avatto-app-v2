@@ -22,10 +22,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     this.fetching = true;
     let pid = this._activatedRoute.snapshot.params.id;
-    this._productdetails.getProduct(pid).pipe().subscribe(data=>{
-      console.log(data);
-      const demo = JSON.stringify(data)
-      this.product = data;
+    this._productdetails.getProduct(pid).pipe().subscribe(response=>{
+      console.log(response);
+      const data = JSON.stringify(response)
+      this.product = JSON.parse(data);
       this.fetching = false;
     });
     

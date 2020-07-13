@@ -8,12 +8,14 @@ import { AboutusPagePageRoutingModule } from './aboutus-page-routing.module';
 
 import { AboutusPagePage } from './aboutus-page.page';
 import { AboutusComponent } from '../../components/aboutus/aboutus.component';
+import { SharedModuleModule } from '../../sharedModule/shared-module/shared-module.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModuleModule,
     AboutusPagePageRoutingModule
   ],
   declarations: [AboutusPagePage, AboutusComponent]

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortQuestionListingPage implements OnInit {
 
+  title:string = "Short Question";
   constructor() { }
 
   ngOnInit() {

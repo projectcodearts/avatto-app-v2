@@ -29,6 +29,12 @@ export class AppComponent implements OnInit {
 		});*/
     this.initializeApp();
   }
+  doRefresh(event){
+    setTimeout(()=>{
+      console.log('operation ended', event)
+      event.target.complete();
+    },2000)
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {

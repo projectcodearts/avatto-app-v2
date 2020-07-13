@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./result.page.scss'],
 })
 export class ResultPage implements OnInit {
-  constructor() { 
-    
-  }
+  
+  title:string = "Result";
+  constructor() { }
 
   ngOnInit() {
   }

@@ -8,9 +8,8 @@ import { Component, OnInit} from '@angular/core';
 })
 export class QuizPage implements OnInit {
   
-  constructor(
-    
-  ) { }
+  title:string = "Quiz";
+  constructor() { }
 
   ngOnInit() {
 

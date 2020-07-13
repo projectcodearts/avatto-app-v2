@@ -8,6 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class QuizExplainPage implements OnInit {
   exp : any;
+  title:string = "Explain";
   constructor(private router: Router, private route: ActivatedRoute, private navCtrl: NavController) {
     this.exp = this.route.snapshot.paramMap.get('explain');
    }

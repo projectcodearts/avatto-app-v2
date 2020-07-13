@@ -33,3 +33,6 @@ ion-slides {
     --bullet-background: #000;
     --bullet-background-active: #001f46;
  }
+ .fetching-block{
+    width: 100%; height: 100%;  display: flex; justify-content: center; align-items: center; margin: 0; padding: 0; top: 0; left: 0; position: fixed; background-color: #fff;
+  }

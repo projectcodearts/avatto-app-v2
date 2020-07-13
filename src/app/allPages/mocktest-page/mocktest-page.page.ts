@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MocktestPagePage implements OnInit {
 
+  title:string = "Mock Test";
   constructor() { }
 
   ngOnInit() {

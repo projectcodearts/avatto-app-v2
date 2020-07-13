@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { OrdersPage } from '../../allPages/orders/orders.page';
+import { UserAddressPage } from 'src/app/allPages/user-address/user-address.page';
 
 
 @Component({
@@ -16,6 +17,13 @@ export class ProfileComponent implements OnInit {
   async presentModal() {
     const modal = await this.modalController.create({
       component: OrdersPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
+  async profileModal() {
+    const modal = await this.modalController.create({
+      component: UserAddressPage,
       cssClass: 'my-custom-class'
     });
     return await modal.present();

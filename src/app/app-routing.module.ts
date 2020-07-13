@@ -139,7 +139,11 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
+  },  {
+    path: 'dummy',
+    loadChildren: () => import('./allPages/dummy/dummy.module').then( m => m.DummyPageModule)
   },
+
   
 ];
 

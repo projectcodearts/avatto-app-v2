@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   qtn: any; 
 
   constructor(private router: Router,private storage: Storage) { }
-
+  
   ngOnInit() {
     this.storage.get('quantity').then(async data => {
      this.qtn = data;

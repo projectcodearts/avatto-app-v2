@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./orders.page.scss'],
 })
 export class OrdersPage implements OnInit {
+  title:string = "Orders";
   constructor(public _products: ProductsService,private storage: Storage, public modalController: ModalController, private router: Router) { }
   orderList : [];
   ngOnInit() {
