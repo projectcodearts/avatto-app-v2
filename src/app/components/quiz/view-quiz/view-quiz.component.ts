@@ -57,6 +57,7 @@ export class ViewQuizComponent implements OnInit {
     
   }
 
+
   async presentModal() {
     const modal = await this.modalController.create({
       component: QuizInstructionPage,
@@ -84,10 +85,7 @@ export class ViewQuizComponent implements OnInit {
         loading.dismiss();
         let item = data[0];
         this.timer = item['time_of_quiz'];
-
-        //localStorage.setItem("totalTime",item['time_of_quiz']);
-        this.storage.set('totalTime',item['time_of_quiz']);
-
+        localStorage.setItem("totalTime",item['time_of_quiz']);
         localStorage.setItem("question",JSON.stringify(item.question));
         this.questionList = JSON.parse(localStorage.getItem("question"));
         this.startQz = "quiz started";
@@ -95,11 +93,7 @@ export class ViewQuizComponent implements OnInit {
       });
     }  else {
       var i = 0;
-      //localStorage.getItem('timer');
-      this.storage.get('timer').then((val) => {
-        this.timer = val;
-      });
-
+      this.timer = localStorage.getItem('timer')
       this.startQz = "quiz started";
       this.startTimer(this.timer);
       this.timeout = setTimeout(() => {
@@ -297,8 +291,7 @@ export class ViewQuizComponent implements OnInit {
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
         coundownHtml.nativeElement.innerHTML = Math.floor(minutes) + ":" + seconds;
-        //localStorage.setItem('timer',timer);
-        this.storage.set('timer', timer);
+        localStorage.setItem('timer',timer);
         if (--timer < 0) {
             timer = duration;
             this.submitQuiz();

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { NavController  } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-view-result',
   templateUrl: './view-result.component.html',
@@ -14,7 +13,7 @@ export class ViewResultComponent implements OnInit {
   resultSheet : any = [];
   shortResult : any = [];
   ViewDetail : any = "";
-  constructor(private storage: Storage,public modalController: ModalController,public nav: NavController) { }
+  constructor(public modalController: ModalController,public nav: NavController) { }
 
   ngOnInit() {
     let correctChoiceCount : number = 0,incorrectChoiceCount : number = 0,unattended : number = 0 ,timeTaken,score;
@@ -49,19 +48,14 @@ export class ViewResultComponent implements OnInit {
     this.shortResult['incorrectChoiceCount'] = incorrectChoiceCount;
     this.shortResult['unattended'] = unattended;
     this.shortResult['timeTaken'] = this.timeConversion();
-    localStorage.clear();
+    
   }
   
   timeConversion(){
-    let timer,totalTime;
-    this.storage.get('timer').then((val) => {
-      timer = val;
-    });
-
-    this.storage.get('totalTime').then((val) => {
-      totalTime = val;
-    });
-    let totSec = parseInt(totalTime) - parseInt(timer);
+    console.log(parseInt(localStorage.getItem("totalTime")));
+    console.log(parseInt(localStorage.getItem('timer')));
+    let totSec = parseInt(localStorage.getItem("totalTime")) - parseInt(localStorage.getItem('timer'));
+    localStorage.clear();
     return totSec;
   }
 
