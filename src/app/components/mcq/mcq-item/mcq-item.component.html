@@ -61,14 +61,22 @@
         </ion-card-header>
         <ion-card-content>
           <ul class="question-option">
-            <li (click)="selection.value = 'question1'" tabindex="0"><span>A</span>{{item.option.A}}</li>
-            <li (click)="selection.value = 'question2'" tabindex="0"><span>B</span>{{item.option.B}}</li>
-            <li (click)="selection.value = 'question3'" tabindex="0"><span>C</span>{{item.option.C}}</li>
-            <li (click)="selection.value = 'question4'" tabindex="0"><span>D</span>{{item.option.D}}</li>
+            <li (click)="selectAnswer('A',item.id,item.choice,lStart,i)" class="ansA{{i}}{{item.id}}"><span>A</span>{{item.option.A}}</li>
+            <li (click)="selectAnswer('B',item.id,item.choice,lStart,i)" class="ansB{{i}}{{item.id}}"><span>B</span>{{item.option.B}}</li>
+            <li (click)="selectAnswer('C',item.id,item.choice,lStart,i)" class="ansC{{i}}{{item.id}}"><span>C</span>{{item.option.C}}</li>
+            <li (click)="selectAnswer('D',item.id,item.choice,lStart,i)" class="ansD{{i}}{{item.id}}"><span>D</span>{{item.option.D}}</li>
           </ul>
         </ion-card-content>
       </ion-card>
-      <input type="hidden" #selection>
+      <div class="answare-back right answare-back{{item.id}}">
+        <div class="main">
+          <div class="show-option"><strong>Option</strong> : <span>{{item.choice}}</span></div>
+          <div class="explanation"><strong>Explanation</strong> 
+          <p [innerHtml] ="item.explain"></p>
+          </div>
+        </div>
+      </div>
+      <!-- <input type="hidden" #selection>
       <div [ngSwitch]="selection.value">
         <div class="answare-back wrong" *ngSwitchCase="'question1'">
           <div class="main">
@@ -97,7 +105,7 @@
         </div>
 
       </div>
-      </div>
+      </div> -->
     </div>
     <div class="button-back">
       <ion-button color="button_transparent" expand="block">submit</ion-button>

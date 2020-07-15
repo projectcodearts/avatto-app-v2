@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { McqService } from '../../../allServices/mcq.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -21,7 +21,8 @@ export class McqItemComponent implements OnInit {
   
   maximumPages = 3;
   data:any;
-  constructor(private _mcq: McqService,public navCtrl: NavController,private httpClient: HttpClient,private route: ActivatedRoute) {
+  constructor(private _mcq: McqService,public navCtrl: NavController,
+    private httpClient: HttpClient,private route: ActivatedRoute,private el: ElementRef,private renderer: Renderer2) {
     this.loadUsers();
    }
   loadUsers(infiniteScroll?) {
@@ -67,5 +68,39 @@ export class McqItemComponent implements OnInit {
     }
 
   }
+
+  selectAnswer(params, questionId,rightChoice,selector,i){
+      let className = '';
+      let explainClassname = '';
+      if(params == rightChoice){
+        className = '.ans'+params+i+questionId;
+        const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
+        this.renderer.setStyle(
+          btnElement,
+          'background-color',
+          '#59ad19'
+        );
+        explainClassname = '.answare-back'+questionId;  
+        const expElement = (<HTMLElement>this.el.nativeElement).querySelector(explainClassname); 
+        this.renderer.setStyle(
+          expElement,
+          'display',
+          'block'
+        );  
+
+      }
+
+      else{
+        className = '.ans'+params+i+questionId;
+        const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
+        this.renderer.setStyle(
+          btnElement,
+          'background-color',
+          '#EC1707'
+        );
+      }
+
+  }
+
 
 }
