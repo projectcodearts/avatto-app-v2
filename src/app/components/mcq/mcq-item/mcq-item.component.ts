@@ -21,6 +21,7 @@ export class McqItemComponent implements OnInit {
   nextBtnActive : any = "false";
   maximumPages = 3;
   data:any;
+  prev:any="false";
   constructor(private _mcq: McqService,public navCtrl: NavController,
     private httpClient: HttpClient,private route: ActivatedRoute,private el: ElementRef,private renderer: Renderer2) {
     this.loadUsers();
@@ -31,21 +32,12 @@ export class McqItemComponent implements OnInit {
     .subscribe(res => {
       this.data = JSON.stringify(res['results']);
       this.users = JSON.parse(this.data);
-      console.log(res['results']);
+      //console.log(res['results']);
       this.users = this.users.concat(res['results']);
-      // if (infiniteScroll) {
-      //   infiniteScroll.target.complete();
-      // }
+     
     })
   }
-  // loadMore(infiniteScroll) {
-  //   this.page++;
-  //   this.loadUsers(infiniteScroll);
- 
-  //   if (this.page === this.maximumPages) {
-  //     infiniteScroll.target.disabled = true;
-  //   }
-  // }
+  
   ngOnInit() {
     this.mcqdata=this._mcq.getmcqsetup();
 
@@ -66,8 +58,35 @@ export class McqItemComponent implements OnInit {
       this.lStart = params + 1;
       this.lEnd = this.lStart + 1;
     }
+    this.nextBtnActive = "false";
+    this.prev = "true";
+  }
+
+  submitQuestion(questionId,params : number){
+    if(this.lStart < this.users.length-1){
+      this.lStart = params + 1;
+      this.lEnd = this.lStart + 1;
+    }
+    this.nextBtnActive = "false";
+    this.prev = "true";
+  }
+
+  prevQuestion(questionId,params : number){
+
+    if(this.lEnd > 1){
+      this.lEnd = parseInt(this.lEnd) - 1;
+      this.lStart = parseInt(this.lEnd) - 1;
+      console.log(this.lStart);
+      this.nextBtnActive = "false";
+      this.prev = "true";
+      if(this.lStart == 0){
+        this.prev = "false";
+      }
+    }
 
   }
+
+
 
   selectAnswer(params, questionId,rightChoice,selector,i){
       let className = '';

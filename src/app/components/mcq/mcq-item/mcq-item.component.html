@@ -76,40 +76,12 @@
           </div>
         </div>
       </div>
-      <!-- <input type="hidden" #selection>
-      <div [ngSwitch]="selection.value">
-        <div class="answare-back wrong" *ngSwitchCase="'question1'">
-          <div class="main">
-            <div class="show-option"><strong>Option</strong> : <span>A</span></div>
-            <div class="explanation"><strong>Explanation</strong> : </div>
-          </div>
-        </div>
-        <div class="answare-back right" *ngSwitchCase="'question2'">
-          <div class="main">
-            <div class="show-option"><strong>Option</strong> : <span>B</span></div>
-            <div class="explanation"><strong>Explanation</strong> : orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-          </div>
-        </div>
-
-        <div class="answare-back wrong" *ngSwitchCase="'question3'">
-          <div class="main">
-            <div class="show-option"><strong>Option</strong> : <span>C</span></div>
-            <div class="explanation"><strong>Explanation</strong> : </div>
-          </div>
-        </div>
-
-        <div class="answare-back wrong" *ngSwitchCase="'question4'">
-          <div class="main">
-            <div class="show-option"><strong>Option</strong> : <span>D</span></div>
-            <div class="explanation"><strong>Explanation</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-        </div>
-
-      </div>
-      </div> -->
+      
     </div>
     <div class="button-back">
-      <ion-button color="button_transparent" expand="block" *ngIf="nextBtnActive == 'true'">submit</ion-button>
+      <ion-button color="button_transparent" expand="block" *ngIf="nextBtnActive == 'true'" (click)="submitQuestion(item.id,lStart)">submit</ion-button>
       <ion-button color="button_transparent" class="transparent" expand="block" (click)="nextQuestion(item.id,lStart)">skip</ion-button>
+      <ion-button color="button_transparent" class="transparent" expand="block" (click)="prevQuestion(item.id,lStart)" *ngIf="prev !='false'">Prev</ion-button>
     </div>
 </div>
  
