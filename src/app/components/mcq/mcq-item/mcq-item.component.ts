@@ -16,6 +16,8 @@ export class McqItemComponent implements OnInit {
   fetching = false;
   users = [];
   page = 1;
+  lStart:any =0;
+  lEnd:any = this.lStart + 1;
   
   maximumPages = 3;
   data:any;
@@ -29,7 +31,7 @@ export class McqItemComponent implements OnInit {
       this.data = JSON.stringify(res['results']);
       this.users = JSON.parse(this.data);
       console.log(res['results']);
-      //this.users = this.users.concat(res['results']);
+      this.users = this.users.concat(res['results']);
       if (infiniteScroll) {
         infiniteScroll.target.complete();
       }
@@ -55,6 +57,14 @@ export class McqItemComponent implements OnInit {
       console.log(this.maximumPages);
       this.fetching = false;
     })
+
+  }
+
+  nextQuestion(questionId,params : number){
+    if(this.lStart < this.users.length-1){
+      this.lStart = params + 1;
+      this.lEnd = this.lStart + 1;
+    }
 
   }
 
