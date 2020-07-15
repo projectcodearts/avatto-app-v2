@@ -13,14 +13,14 @@ export class HomePage implements OnInit, OnDestroy {
   exitmethod: any;
   menu: any[];
   mainlogo: string = "assets/images/avatto-web-white.png";
-  constructor(private _menu: MenuServices, private _exitmethod: Platform) {
-    this.exitmethod=this._exitmethod.backButton.subscribeWithPriority(666666,()=>{
+  constructor(private _menu: MenuServices /*private _exitmethod: Platform*/) {
+    /*this.exitmethod=this._exitmethod.backButton.subscribeWithPriority(666666,()=>{
       if(this.constructor.name === "HomePage"){
         if(window.confirm("Do You Want to Exit the Avatto?")){
           navigator["app"].exit();
         }
       }
-    })
+    })*/
    }
    
 

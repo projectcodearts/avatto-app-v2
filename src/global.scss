@@ -144,4 +144,23 @@ ion-content{
 }
 
 
-  
+.my-custom-class{
+  .alert-wrapper{
+    max-width: 90%; padding: 80px 20px 40px; text-align: center;  background-image: url(assets/images/error.svg); background-repeat: no-repeat; background-position: center 30px; background-size: 11%;
+    .alert-title{
+      text-align: center; font-weight: 700; font-size: 19px;
+    }
+    .alert-button-group{
+      display: block !important;
+    }
+    button[type="button"]{
+      width: 100%; background-color: #001f46; text-align: center; border-radius: 100px; text-align: center; margin-bottom: 15px; color: #fff;
+      span{
+        display: block !important; text-align: center; width: 100%; padding: 6px 0;
+      }
+      &:last-child{ 
+        margin-bottom: 0; background-color: transparent; border: #001f46 2px solid; color: #001f46;
+      }
+    }
+  }
+}

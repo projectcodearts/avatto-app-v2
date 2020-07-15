@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class QuizInstructionPage implements OnInit {
 
+  title: string = "Instruction"
   constructor(public modalCtrl: ModalController) { }
 
   ngOnInit() {
