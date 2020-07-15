@@ -56,6 +56,17 @@ export class FeaturedCategoryComponent implements OnInit {
             'display',
             'block'
           );
+
+          let btnClass =  ".load_more";
+          const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(btnClass);
+          //const btnElement_less = (<HTMLElement>this.el.nativeElement).querySelector('.show_less');
+          console.log(btnElement);
+          
+              this.renderer.setStyle(
+                btnElement,
+                'display',
+                'none'
+              );
   
       }
 
@@ -63,20 +74,20 @@ export class FeaturedCategoryComponent implements OnInit {
 
     if(this.count == 3){
 
-      for(let i=12;i<15;i++){
-        let className = ".cat-name"+i;
-        const cardElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
-          this.renderer.setStyle(
-            cardElement,
-            'display',
-            'block'
-          );
+      // for(let i=12;i<14;i++){
+      //   let className = ".cat-name"+i;
+      //   const cardElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
+      //     this.renderer.setStyle(
+      //       cardElement,
+      //       'display',
+      //       'block'
+      //     );
   
-      }
-
-      const btnElement = (<HTMLElement>this.el.nativeElement).querySelector('.load_more');
+      // }
+      let btnClass =  ".load_more";
+      const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(btnClass);
       //const btnElement_less = (<HTMLElement>this.el.nativeElement).querySelector('.show_less');
-
+      console.log(btnElement);
        
           this.renderer.setStyle(
             btnElement,
