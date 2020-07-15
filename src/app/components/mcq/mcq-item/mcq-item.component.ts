@@ -18,7 +18,7 @@ export class McqItemComponent implements OnInit {
   page = 1;
   lStart:any =0;
   lEnd:any = this.lStart + 1;
-  
+  nextBtnActive : any = "false";
   maximumPages = 3;
   data:any;
   constructor(private _mcq: McqService,public navCtrl: NavController,
@@ -33,19 +33,19 @@ export class McqItemComponent implements OnInit {
       this.users = JSON.parse(this.data);
       console.log(res['results']);
       this.users = this.users.concat(res['results']);
-      if (infiniteScroll) {
-        infiniteScroll.target.complete();
-      }
+      // if (infiniteScroll) {
+      //   infiniteScroll.target.complete();
+      // }
     })
   }
-  loadMore(infiniteScroll) {
-    this.page++;
-    this.loadUsers(infiniteScroll);
+  // loadMore(infiniteScroll) {
+  //   this.page++;
+  //   this.loadUsers(infiniteScroll);
  
-    if (this.page === this.maximumPages) {
-      infiniteScroll.target.disabled = true;
-    }
-  }
+  //   if (this.page === this.maximumPages) {
+  //     infiniteScroll.target.disabled = true;
+  //   }
+  // }
   ngOnInit() {
     this.mcqdata=this._mcq.getmcqsetup();
 
@@ -99,7 +99,7 @@ export class McqItemComponent implements OnInit {
           '#EC1707'
         );
       }
-
+      this.nextBtnActive = "true";
   }
 
 

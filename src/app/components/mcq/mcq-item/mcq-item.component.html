@@ -108,7 +108,7 @@
       </div> -->
     </div>
     <div class="button-back">
-      <ion-button color="button_transparent" expand="block">submit</ion-button>
+      <ion-button color="button_transparent" expand="block" *ngIf="nextBtnActive == 'true'">submit</ion-button>
       <ion-button color="button_transparent" class="transparent" expand="block" (click)="nextQuestion(item.id,lStart)">skip</ion-button>
     </div>
 </div>
