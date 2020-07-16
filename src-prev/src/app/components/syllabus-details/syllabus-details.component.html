@@ -1,0 +1,22 @@
+<ion-grid>
+  <ion-row class="product-details">
+    <ion-col size-lg="12" size-md="12" size-sm="12" size="12">
+      <ion-card>
+        
+        <div class="drescription-back">
+          <ion-card-header class="card-header">
+            <ion-card-title class="card-title">{{sylllabus.title}}</ion-card-title>
+          </ion-card-header>
+          
+          <iframe [src]="sylllabus.iframe_src | safe" width="100%" height="1122"></iframe>
+
+
+         
+          <p [innerHTML]="sylllabus.content"></p>
+         
+         
+        </div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

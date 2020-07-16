@@ -19,7 +19,8 @@ import { PapersService } from '../../allServices/papers.service';
 import { MocktestService } from '../../allServices/mocktest.service';
 import { EligiblityService } from '../../allServices/eligiblity.service';
 import { FeaturedCategoryComponent } from '../../components/featured-category/featured-category.component';
-import { SharedModuleModule } from 'src/app/sharedModule/shared-module/shared-module.module';
+import { SharedModuleModule } from '../../sharedModule/shared-module/shared-module.module';
+import { QuizserviceService } from '../../allServices/quizservice.service';
 
 @NgModule({
   imports: [
@@ -39,6 +40,6 @@ import { SharedModuleModule } from 'src/app/sharedModule/shared-module/shared-mo
     MocktestComponent,
     QuizComponent
   ],
-  providers: [CategoryServicesService, SyllabusService, EligiblityService, PapersService, MocktestService],
+  providers: [CategoryServicesService, SyllabusService, EligiblityService, PapersService, MocktestService, QuizserviceService],
 })
 export class HomePageModule {}

@@ -1,0 +1,108 @@
+<!--<div class="ion-item-back" *ngFor="let data of mcqdata, index as i">
+  <div class="question-title">{{i+1}}. {{data.questionTitle}}</div>
+  <ul class="option-back">
+    <li *ngFor="let question of data.questionoption" [class]="question.iconoption" (click)="selection.value = question.id" tabindex="0"><span>{{question.option_no}}</span> {{question.option}} <i class="icon"></i></li>
+  </ul>
+  <div class="answare-back">
+    <div class="title">Answer</div> 
+    <input type="hidden" #selection>
+    <div *ngFor="let ans of data.answareoption" >
+      <div [ngSwitch]="selection.value">
+        <div *ngSwitchCase="ans.id">
+          <div class="show-option">Option {{ans.showOption | uppercase}} ({{ans.showoptiontext}})</div>
+          <div class="explanation">{{ans.explanation}}</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    
+</div>-->
+
+<!--<div class="fetching-block" *ngIf="fetching">
+  <div class="lds-ring">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <p>Fetching...</p> 
+</div>
+<div class="ion-item-back" *ngFor="let user of users, index as i">
+  <div class="question-title">{{user.num}}. {{user.title}}</div>
+  <ul class="option-back">
+    <li><span>A</span>{{user.option.A}} <i class="icon"></i></li>
+    <li><span>B</span>{{user.option.B}} <i class="icon"></i></li>
+    <li><span>C</span>{{user.option.C}} <i class="icon"></i></li>
+    <li><span>D</span>{{user.option.D}} <i class="icon"></i></li>
+  </ul>
+</div>
+
+  
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)" loadingSpinner="bubbles" loadingText="Loading Users...">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>-->
+
+  <div class="fetching-block" *ngIf="fetching">
+    <div class="lds-ring">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <p>Fetching...</p> 
+  </div>
+  <div class="new-mcq-back">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Question 1</ion-card-subtitle>
+        <ion-card-title>The Council of Ministers is responsible to the:</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ul class="question-option">
+          <li (click)="selection.value = 'question1'" tabindex="0"><span>A</span> President</li>
+          <li (click)="selection.value = 'question2'" tabindex="0"><span>B</span>Lok Sabha</li>
+          <li (click)="selection.value = 'question3'" tabindex="0"><span>C</span>Vice-President</li>
+          <li (click)="selection.value = 'question4'" tabindex="0"><span>D</span>Rajya Sabha</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+    <input type="hidden" #selection>
+    <div [ngSwitch]="selection.value">
+      <div class="answare-back wrong" *ngSwitchCase="'question1'">
+        <div class="main">
+          <div class="show-option"><strong>Option</strong> : <span>A</span></div>
+          <div class="explanation"><strong>Explanation</strong> : </div>
+        </div>
+      </div>
+      <div class="answare-back right" *ngSwitchCase="'question2'">
+        <div class="main">
+          <div class="show-option"><strong>Option</strong> : <span>B</span></div>
+          <div class="explanation"><strong>Explanation</strong> : orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </div>
+      </div>
+
+      <div class="answare-back wrong" *ngSwitchCase="'question3'">
+        <div class="main">
+          <div class="show-option"><strong>Option</strong> : <span>C</span></div>
+          <div class="explanation"><strong>Explanation</strong> : </div>
+        </div>
+      </div>
+
+      <div class="answare-back wrong" *ngSwitchCase="'question4'">
+        <div class="main">
+          <div class="show-option"><strong>Option</strong> : <span>D</span></div>
+          <div class="explanation"><strong>Explanation</strong> : Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <div class="button-back">
+    <ion-button color="button_transparent" expand="block">submit</ion-button>
+    <ion-button color="button_transparent" class="transparent" expand="block">skip</ion-button>
+  </div>
+ 
+
+
+

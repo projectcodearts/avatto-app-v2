@@ -115,6 +115,10 @@ const routes: Routes = [
     path: 'syllabus-details/:id',
     loadChildren: () => import('./allPages/syllabus-details/syllabus-details.module').then( m => m.SyllabusDetailsPageModule)
   },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./allPages/quiz-main-page/quiz-main-page.module').then( m => m.QuizMainPagePageModule)
+  },
 
   {
     path: 'quiz-explain',
@@ -140,6 +144,11 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
   }
+  
+
+
+  
+
 
   
 ];

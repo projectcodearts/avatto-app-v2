@@ -80,8 +80,8 @@
     </div>
     <div class="button-back">
       <ion-button color="button_transparent" expand="block" *ngIf="nextBtnActive == 'true'" (click)="submitQuestion(item.id,lStart)">submit</ion-button>
+      <ion-button color="button_transparent" class="yellow" expand="block" (click)="prevQuestion(item.id,lStart)" *ngIf="prev !='false'">Prev</ion-button>
       <ion-button color="button_transparent" class="transparent" expand="block" (click)="nextQuestion(item.id,lStart)">skip</ion-button>
-      <ion-button color="button_transparent" class="transparent" expand="block" (click)="prevQuestion(item.id,lStart)" *ngIf="prev !='false'">Prev</ion-button>
     </div>
 </div>
  

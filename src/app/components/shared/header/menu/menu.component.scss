@@ -20,7 +20,7 @@
     .logout{ 
         /*position: fixed; bottom: 0; left: 0; width: 100%; cursor: pointer;*/
         ion-icon{
-            color: $custom_primary;
+            color: $custom_primary; transform: rotate(90deg);
         }
         ion-label{
             color: $custom_primary;

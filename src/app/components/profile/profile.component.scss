@@ -50,7 +50,22 @@
         
 }
 
-
+.login{
+    ion-label{
+        color: #173143;
+    }
+    ion-icon{
+        position: relative; transform: rotate(-90deg); color: #173143;
+    }
+}
+.logout{
+    ion-label{
+        color: #173143;
+    }
+    ion-icon{
+        position: relative; transform: rotate(90deg); color: #173143;
+    }
+}
 
 @import "../../../assets/css/mixin.component.scss";
 @import "../../../theme/color_variables.scss";

@@ -43,7 +43,10 @@ ion-content{
             }
         }
     }
-    ion-button{
-        display: inline-block; background-color: #f7bb00; color: #001f46; border-radius: 5px;
-    }
+   
+}
+
+
+ion-button{
+    display: inline-block; background-color: #f7bb00; color: #001f46; width: 90%; height: 50px; margin: 5.5px 0; border: none; border-radius: 100px; --box-shadow: none; display: inline-block;
 }

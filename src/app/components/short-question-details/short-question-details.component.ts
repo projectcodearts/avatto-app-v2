@@ -11,8 +11,8 @@ import { ShortQuestionDetailsService } from '../../allServices/short-question-de
 export class ShortQuestionDetailsComponent implements OnInit {
   fetching = false;
   sqdata: any;
-  expanded: boolean = true;
-  plus: boolean = false;
+  //expanded: boolean = true;
+  //plus: boolean = false;
   constructor(private _shtdets:ShortQuestionDetailsService,private route: ActivatedRoute,private router:Router,private storage: Storage,private http:HttpClient) { }
 
   ngOnInit() {
@@ -26,22 +26,21 @@ export class ShortQuestionDetailsComponent implements OnInit {
     });
   }
 
-  accordion(){
+  /*accordion(){
     this.expanded=!this.expanded;
     this.plus=!this.plus;
-  }
+  }*/
 
   toggleAccordian(event, index) {
     var element = event.target.parentElement;
-    //console.log(element);
+    console.log(element);
     element.classList.toggle("active");
     if(this.sqdata[index].isActive) {
       this.sqdata[index].isActive = false;
     } else {
       this.sqdata[index].isActive = true;
     }      
-    var details_back = event.target.nextElementSibling;
-    //console.log(details_back);
+    var details_back = element.nextElementSibling;
     if (details_back.style.maxHeight) {
       details_back.style.maxHeight = null;
     } else {

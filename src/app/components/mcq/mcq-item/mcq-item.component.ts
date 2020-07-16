@@ -94,10 +94,9 @@ export class McqItemComponent implements OnInit {
       if(params == rightChoice){
         className = '.ans'+params+i+questionId;
         const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
-        this.renderer.setStyle(
+        this.renderer.addClass(
           btnElement,
-          'background-color',
-          '#59ad19'
+          'right'
         );
         explainClassname = '.answare-back'+questionId;  
         const expElement = (<HTMLElement>this.el.nativeElement).querySelector(explainClassname); 
@@ -112,10 +111,9 @@ export class McqItemComponent implements OnInit {
       else{
         className = '.ans'+params+i+questionId;
         const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
-        this.renderer.setStyle(
+        this.renderer.addClass(
           btnElement,
-          'background-color',
-          '#EC1707'
+          'wrong'
         );
       }
       this.nextBtnActive = "true";

@@ -86,14 +86,17 @@
 .button-back{
     width: 100%; float: left; padding: 0 7px;
     ion-button{
-        height: 68px; text-transform: capitalize; font-size: 21px; border-radius: 5px; margin-top: 20px;
+        height: 50px; text-transform: capitalize; font-size: 21px; border-radius: 5px; margin-top: 20px;
         background: #286bbf; 
         background: -moz-linear-gradient(left,  #286bbf 0%, #163c6c 100%); 
         background: -webkit-linear-gradient(left,  #286bbf 0%,#163c6c 100%); 
         background: linear-gradient(to right,  #286bbf 0%,#163c6c 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#286bbf', endColorstr='#163c6c',GradientType=1 ); 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#286bbf', endColorstr='#163c6c',GradientType=1 ); border-radius: 100px; --box-shadow: none;
         &.transparent{
-            background: none; color: #757575; font-size: 15px; --box-shadow:none; margin-top: 0;
+            background: none; color: #757575; font-size: 15px; --box-shadow:none;  border: #286bbf 2px solid;
+        }
+        &.yellow{
+            background: #f7bb00; color: #286bbf; 
         }
     }
 }

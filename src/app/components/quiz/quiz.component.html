@@ -1,7 +1,7 @@
 <div class="avatoo-section">
   <div class="heading">
     <h2>{{title}}</h2>
-    <a [routerLink]="['/#']" class="view-all">view all</a>
+    <a [routerLink]="['/quiz']" class="view-all">view all</a>
   </div>
   <div class="fetching-block" *ngIf="fetching" >
     <div class="lds-ring">
@@ -19,6 +19,5 @@
         </div>
         <ion-label class="ion-text-wrap">{{data.title}}</ion-label>
       </ion-item>
-      
   </div>
 </div>
