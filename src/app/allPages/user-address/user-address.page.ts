@@ -33,7 +33,7 @@ export class UserAddressPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this._products.getCustomer("1").then(data => {
+    this._products.getCustomer("12").then(data => {
       let item = data[0];
       this.customerInfo = item;
       console.log(this.customerInfo);
