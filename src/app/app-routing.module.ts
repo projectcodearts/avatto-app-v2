@@ -141,9 +141,23 @@ const routes: Routes = [
     loadChildren: () => import('./allPages/profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
   },
   {
+    path: 'search-result',
+    loadChildren: () => import('./allPages/search-result-page/search-result-page.module').then( m => m.SearchResultPagePageModule)
+  },
+  {
+    path: 'search-result/:id',
+    loadChildren: () => import('./allPages/search-result-page/search-result-page.module').then( m => m.SearchResultPagePageModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
+  },  {
+    path: 'search-result-details-page',
+    loadChildren: () => import('./allPages/search-result-page/search-result-details-page/search-result-details-page.module').then( m => m.SearchResultDetailsPagePageModule)
   }
+
+  
+
   
 
 
