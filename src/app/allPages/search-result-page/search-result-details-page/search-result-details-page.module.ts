@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { SearchResultDetailsPagePageRoutingModule } from './search-result-details-page-routing.module';
 
 import { SearchResultDetailsPagePage } from './search-result-details-page.page';
+import { SearchResultDetailsComponent } from 'src/app/components/search-result/search-result-details/search-result-details.component';
+import { TextshortPipe } from 'src/app/allPipes/textshort.pipe';
+import { SearchResultService } from 'src/app/allServices/search-result.service';
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { SearchResultDetailsPagePage } from './search-result-details-page.page';
     IonicModule,
     SearchResultDetailsPagePageRoutingModule
   ],
-  declarations: [SearchResultDetailsPagePage]
+  declarations: [SearchResultDetailsPagePage, SearchResultDetailsComponent],
+  providers: [SearchResultService, TextshortPipe]
 })
 export class SearchResultDetailsPagePageModule {}

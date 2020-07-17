@@ -144,17 +144,16 @@ const routes: Routes = [
     path: 'search-result',
     loadChildren: () => import('./allPages/search-result-page/search-result-page.module').then( m => m.SearchResultPagePageModule)
   },
+  
   {
     path: 'search-result/:id',
-    loadChildren: () => import('./allPages/search-result-page/search-result-page.module').then( m => m.SearchResultPagePageModule)
+    loadChildren: () => import('./allPages/search-result-page/search-result-details-page/search-result-details-page.module').then( m => m.SearchResultDetailsPagePageModule)
   },
   {
     path: '**',
     loadChildren: () => import('./allPages/pagenotfound/pagenotfound.module').then( m => m.PagenotfoundPageModule)
-  },  {
-    path: 'search-result-details-page',
-    loadChildren: () => import('./allPages/search-result-page/search-result-details-page/search-result-details-page.module').then( m => m.SearchResultDetailsPagePageModule)
   }
+  
 
   
 

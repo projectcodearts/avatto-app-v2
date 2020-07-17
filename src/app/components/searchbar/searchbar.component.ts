@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,10 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./searchbar.component.scss'],
 })
 export class SearchbarComponent implements OnInit {
+  searchform: FormGroup;
+  constructor(private router: Router, private fb: FormBuilder) { }
 
-  constructor(private router: Router) { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.searchform = this.fb.group({
+      name: ['', Validators.required]
+    });
+  }
   onSearch(name: string) {
     this.router.navigate(['/search-result', name])
  }
