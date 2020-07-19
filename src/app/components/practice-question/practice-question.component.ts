@@ -18,6 +18,7 @@ export class PracticeQuestionComponent implements OnInit {
       const data = JSON.stringify(response)
       this.pqdata = response;
       this.fetching = false;
+      
     });
     
   }

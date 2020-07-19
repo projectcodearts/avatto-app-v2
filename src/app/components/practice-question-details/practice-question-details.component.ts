@@ -30,9 +30,35 @@ export class PracticeQuestionDetailsComponent implements OnInit {
 
     this.fetching = true;
     this._practiceqsdts.getPracticeQuestionDetails(id).pipe().subscribe(response=>{
-      console.log(response);
-      this.practiceQs = response;
       
+      this.practiceQs = response;
+      let i =0 ;
+      
+      let count_post = {};
+      this.practiceQs.forEach(element => {
+        
+        //console.log(element.count_post);
+        
+        let ans = 0;
+        
+        element.child.forEach(element2 => {
+          //console.log(element.link);
+          this.storage.get('mcq_data'+element2.link).then((val) => {
+            if(val){
+              //console.log(val.lEnd/element.count_post);
+              ans+= val.lEnd;
+              count_post[i] = (ans);
+             }
+          });
+        });
+
+        i++;
+
+      });
+
+      console.log(count_post);
+
+
       if(this.practiceQs.length == 0){
         console.log('no response');
         this.router.navigate(['/mcq', id]);

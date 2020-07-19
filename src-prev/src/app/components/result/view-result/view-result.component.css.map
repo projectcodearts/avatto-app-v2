@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,YAAY,CAAA,KAAC;CACd",
+    "sources": [
+        "view-result.component.scss"
+    ],
+    "names": [],
+    "file": "view-result.component.css"
+}

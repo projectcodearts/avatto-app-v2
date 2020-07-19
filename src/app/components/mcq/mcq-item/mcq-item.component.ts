@@ -1,7 +1,7 @@
 import { Component, OnInit,ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { McqService } from '../../../allServices/mcq.service';
 import { HttpClient } from '@angular/common/http';
-
+import { Storage } from '@ionic/storage';
 import { NavController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 import { pid } from 'process';
@@ -22,7 +22,8 @@ export class McqItemComponent implements OnInit {
   maximumPages = 3;
   data:any;
   prev:any="false";
-  constructor(private _mcq: McqService,public navCtrl: NavController,
+  options:any[];
+  constructor(private _mcq: McqService,public navCtrl: NavController,private storage: Storage,
     private httpClient: HttpClient,private route: ActivatedRoute,private el: ElementRef,private renderer: Renderer2) {
     this.loadUsers();
    }
@@ -51,28 +52,54 @@ export class McqItemComponent implements OnInit {
       this.fetching = false;
     })
 
+    this.storage.get('mcq_data'+id).then((val) => {
+        if(val){
+          this.lStart = val.lStart;
+          this.lEnd = val.lEnd;
+          
+        }
+    });
+
   }
 
   nextQuestion(questionId,params : number){
+    let pusheditems = {};
+    let id = this.route.snapshot.paramMap.get('id');
     if(this.lStart < this.users.length-1){
       this.lStart = params + 1;
       this.lEnd = this.lStart + 1;
     }
     this.nextBtnActive = "false";
     this.prev = "true";
+    pusheditems['id'] = this.route.snapshot.paramMap.get('id');
+    pusheditems['lStart'] = this.lStart;
+    pusheditems['lEnd'] = this.lEnd;
+    pusheditems['length'] = this.users.length;
+
+    this.storage.set("mcq_data"+id,pusheditems);
+
   }
 
   submitQuestion(questionId,params : number){
+    let pusheditems = {};
+    let id = this.route.snapshot.paramMap.get('id');
     if(this.lStart < this.users.length-1){
       this.lStart = params + 1;
       this.lEnd = this.lStart + 1;
     }
     this.nextBtnActive = "false";
     this.prev = "true";
+    pusheditems['id'] = this.route.snapshot.paramMap.get('id');
+    pusheditems['lStart'] = this.lStart;
+    pusheditems['lEnd'] = this.lEnd;
+    pusheditems['length'] = this.users.length;
+    this.storage.set("mcq_data"+id,pusheditems);
+    
   }
 
   prevQuestion(questionId,params : number){
-
+    let pusheditems = {};
+    let id = this.route.snapshot.paramMap.get('id');
     if(this.lEnd > 1){
       this.lEnd = parseInt(this.lEnd) - 1;
       this.lStart = parseInt(this.lEnd) - 1;
@@ -83,6 +110,11 @@ export class McqItemComponent implements OnInit {
         this.prev = "false";
       }
     }
+    pusheditems['id'] = this.route.snapshot.paramMap.get('id');
+    pusheditems['lStart'] = this.lStart;
+    pusheditems['lEnd'] = this.lEnd;
+    pusheditems['length'] = this.users.length;
+    this.storage.set("mcq_data"+id,pusheditems);
 
   }
 
