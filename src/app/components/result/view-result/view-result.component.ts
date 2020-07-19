@@ -18,17 +18,18 @@ export class ViewResultComponent implements OnInit {
   ngOnInit() {
     let correctChoiceCount : number = 0,incorrectChoiceCount : number = 0,unattended : number = 0 ,timeTaken,score;
     for(var key in this.questionList){
+      console.log(this.questionList[key]);
       let result = {};
       result['questionName'] = this.questionList[key]["name"];
       result['explain'] = this.questionList[key]["explain"];
       if(typeof this.postAns[key] === 'undefined'){
         result['userChoice'] = "N/A";
-        result['correctChoice'] = "N/A";     
+        result['correctChoice'] = this.questionList[key]["choice"];     
         unattended++  
       } else {
         if(this.postAns[key]["markReviewd"] == "notanswerd"){
           result['userChoice'] = "N/A";
-          result['correctChoice'] = "N/A";
+          result['correctChoice'] = this.questionList[key]["choice"];
           unattended++       
         } else {
           result['userChoice'] = this.postAns[key]["choice"];
@@ -53,7 +54,7 @@ export class ViewResultComponent implements OnInit {
   
   timeConversion(){
     console.log(parseInt(localStorage.getItem("totalTime")));
-    console.log(parseInt(localStorage.getItem('timer')));
+    console.log("in result",parseInt(localStorage.getItem('timer')));
     let totSec = parseInt(localStorage.getItem("totalTime")) - parseInt(localStorage.getItem('timer'));
     localStorage.clear();
     return totSec;

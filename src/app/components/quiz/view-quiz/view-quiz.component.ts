@@ -75,7 +75,22 @@ export class ViewQuizComponent implements OnInit {
 
   async startQuiz(){
     let id = this.route.snapshot.paramMap.get('id');
-    if(this.questionList.length <= 0){
+    let loading = await this.loadingCtrl.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+    });
+    loading.present();
+    this.quiz.getQuestions(id).then(data => {
+      loading.dismiss();
+      let item = data[0];
+      this.timer = item['time_of_quiz'];
+      localStorage.setItem("totalTime",item['time_of_quiz']);
+      localStorage.setItem("question",JSON.stringify(item.question));
+      this.questionList = JSON.parse(localStorage.getItem("question"));
+      this.startQz = "quiz started";
+      this.startTimer(this.timer);
+    });
+    /*if(this.questionList.length <= 0){
       let loading = await this.loadingCtrl.create({
         cssClass: 'my-custom-class',
         message: 'Please wait...',
@@ -122,7 +137,7 @@ export class ViewQuizComponent implements OnInit {
             i++;
         }
     }, 100);      
-    }
+    } */
   }
 
   prevQuestion(){
@@ -254,6 +269,7 @@ export class ViewQuizComponent implements OnInit {
   }
 
   async submitQuiz(){
+    clearInterval(this.interval);
     let loading = await this.loadingCtrl.create({
 			cssClass: 'my-custom-class',
 			message: 'Please wait...',
@@ -292,6 +308,7 @@ export class ViewQuizComponent implements OnInit {
 
         coundownHtml.nativeElement.innerHTML = Math.floor(minutes) + ":" + seconds;
         localStorage.setItem('timer',timer);
+        console.log(parseInt(localStorage.getItem('timer')));
         if (--timer < 0) {
             timer = duration;
             this.submitQuiz();
