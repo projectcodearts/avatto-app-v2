@@ -38,9 +38,12 @@ export class AppComponent implements OnInit {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      //this.statusBar.styleDefault();
       this.splashScreen.hide();
-    });
+      if (this.platform.is('android')) {
+        this.statusBar.backgroundColorByHexString("#33000000");
+      }
+      });
   }
 
   ngOnInit() {

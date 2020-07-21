@@ -18,6 +18,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CodePush } from '@ionic-native/code-push/ngx';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SplashScreen,
     CommonService,
     FormBuilder,
-    
+    CodePush,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     
     
