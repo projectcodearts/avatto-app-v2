@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuServices } from 'src/app/allServices/menu.service';
 import { ApiService } from 'src/app/allServices/api.service';
 import { ToastController, AlertController } from '@ionic/angular';
-import { CodePush, SyncStatus } from '@ionic-native/code-push/ngx';
+
 import { Platform } from '@ionic/angular';
 @Component({
   selector: 'app-menu',
@@ -19,7 +19,6 @@ export class MenuComponent implements OnInit {
     private api: ApiService,
     private toastCtrl: ToastController, 
     private alertCtrl: AlertController,
-    private codePush: CodePush, 
     private platform: Platform
     ) { }
 
@@ -45,7 +44,7 @@ export class MenuComponent implements OnInit {
   }
 
 
-  async checkCodePush(){
+  /*async checkCodePush(){
     this.codePush.sync({}, (progress)=>{
 
     }).subscribe(async (status)=>{
@@ -111,7 +110,7 @@ export class MenuComponent implements OnInit {
       }
   
     })
-  }
+  }*/
 
 
 }
