@@ -113,7 +113,7 @@ export class ProductsService {
 
   getCustomer(customerId){
     let customerlist = [];
-    let seq = this.get(`wp-json/wc/v3/customers/${customerId}&consumer_key=${
+    let seq = this.get(`wp-json/wc/v3/customers/${customerId}?consumer_key=${
       this.consumerKey
     }&consumer_secret=${this.consumerSecret}`, '');
     // don't have the data yet

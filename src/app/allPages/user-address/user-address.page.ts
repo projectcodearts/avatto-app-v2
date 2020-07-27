@@ -36,6 +36,7 @@ export class UserAddressPage implements OnInit {
     this._products.getCustomer("12").then(data => {
       let item = data[0];
       this.customerInfo = item;
+      this.userAddress.billing = item.billing;
       console.log(this.customerInfo);
     });
   }
@@ -57,7 +58,7 @@ export class UserAddressPage implements OnInit {
     let shillpingAddress = this.userAddress.billing;
     this.userAddress['shipping'] = shillpingAddress;
     
-    this._products.updateUserAddress(this.userAddress,"1").subscribe(async (resp) => {
+    this._products.updateUserAddress(this.userAddress,"12").subscribe(async (resp) => {
       loading.dismiss();
       const toast = await this.toastCtrl.create({
         message: 'Address has been successfully updated.',
