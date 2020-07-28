@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../allServices/products.service';
-import { Platform, LoadingController, ToastController, ModalController } from '@ionic/angular';
+import { Platform, LoadingController, ToastController, ModalController,NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 @Component({
   selector: 'app-user-address',
@@ -25,6 +25,7 @@ export class UserAddressPage implements OnInit {
     }
   };
   constructor(public platform: Platform,
+    public nav: NavController,
     public loadingCtrl: LoadingController,
     public toastCtrl: ToastController,
     public _products: ProductsService,
@@ -40,12 +41,18 @@ export class UserAddressPage implements OnInit {
       console.log(this.customerInfo);
     });
   }
+
+  ionViewDidEnter(){
+    
+  }
+
   dismiss() {
+    this.nav.back();
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
-    this.modalController.dismiss({
+    /*this.modalController.dismiss({
       'dismissed': true
-    });
+    });*/
   }
 
   async updateAddress(){
